@@ -8,4 +8,20 @@ public class LoginPage extends PomBase {
     public LoginPage(WebDriver webDriver){
         super(webDriver);
     }
+
+    public void SetUsername(String username){
+
+    }
+
+    public void SetPassword(String password){
+
+    }
+
+    public void Submit(){
+
+    }
+
+    public void NavigateToProduct(){
+        ProductPage productPage = new ProductPage(this.driver);
+    }
 }
