@@ -8,8 +8,8 @@ Feature: Login Test
 
   @Jira("S-456") # Link to Jira user story
   Scenario: User should be able to login with valid credentials
-    When I enter "username" in the Username text box
-    And I enter "password" in the Password text box
+    When I enter "standard_user" in the Username text box
+    And I enter "secret_sauce" in the Password text box
     And I click on the login button
     Then the system should display the "PRODUCTS" page
 
