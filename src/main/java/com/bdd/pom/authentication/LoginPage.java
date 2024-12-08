@@ -1,8 +1,14 @@
 package com.bdd.pom.authentication;
 
 import com.bdd.base.PomBase;
+import com.bdd.constants.TestConstants;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage extends PomBase {
 
@@ -30,5 +36,12 @@ public class LoginPage extends PomBase {
 
     public boolean logoIsDisplayed() {
         return isDisplayed(LoginPageElements.logo);
+    }
+
+    public String getLockedUserErrorMsg() {
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(TestConstants.WEB_DRIVER_WAIT));
+        WebElement element = driver.findElement(LoginPageElements.lockedUserErrorMsg);
+        wait.until(ExpectedConditions.visibilityOf(element));
+        return element.getText();
     }
 }

@@ -9,6 +9,6 @@ public class LoginPageElements {
     public static By loginButton = By.xpath("//*[@id='login-button']");
     public static By logo = By.xpath("//div[@class='login_logo']");
 
-
+    public static By lockedUserErrorMsg = By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3");
 
 }

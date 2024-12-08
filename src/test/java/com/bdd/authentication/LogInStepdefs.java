@@ -18,7 +18,7 @@ public class LogInStepdefs extends BaseStepDefs {
     LoginPage loginPage;
     ProductPage productPage;
     @When("I enter {string} in the Username text box")
-    public void EnterUsername(String username) {
+    public  void EnterUsername(String username) {
         loginPage.SetUsername(username);
     }
 
@@ -45,5 +45,11 @@ public class LogInStepdefs extends BaseStepDefs {
         Assert.assertEquals(productPage.GetPageHeader().toUpperCase(), pagetitle.toUpperCase());
         loginPage = null;
         productPage =null;
+    }
+
+    @Then("Locked out error message {string} is displayed")
+    public void lockedOutErrorMessageIsDisplayed(String errorMsg) {
+        String actual = loginPage.getLockedUserErrorMsg();
+        Assert.assertEquals(actual, errorMsg);
     }
 }
