@@ -27,9 +27,9 @@ public class PomBase {
             System.out.println(e.getMessage());
         }
     }
-    public void waitForVisibility(WebElement by) {
+    public void waitForVisibility(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TestConstants.WEB_DRIVER_WAIT));
-        wait.until(ExpectedConditions.visibilityOf(by));
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
     public void clearText(By by) {
         var element = driver.findElement(by);
