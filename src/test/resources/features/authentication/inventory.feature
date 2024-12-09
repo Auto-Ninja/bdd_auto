@@ -11,3 +11,12 @@ Feature: Product Search
     When I am on Product page
     And Search for an item with title "Sauce Labs Backpack"
     Then User should able to find the product
+
+  Scenario: Successfully search for products by name
+    When I am on Product page
+    And I search for the following products
+      | productName              |
+      | Sauce Labs Bike Light    |
+      | Sauce Labs Fleece Jacket |
+      | Sauce Labs Onesie        |
+    Then User should able to find the list of product
