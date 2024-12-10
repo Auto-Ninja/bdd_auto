@@ -10,4 +10,12 @@ public class ProductPageElements {
         String xpath = String.format("//*[@class=\"inventory_list\"]/div/div[2]/div/a/div[text()='%s']", productName);
         return By.xpath(xpath);
     }
+
+    public static By getProductButtonXPath(String productName) {
+        String xpath = String.format("//*[@class=\"inventory_list\"]/div/div[2]/div/a/div[text()='%s']/../../../div[2]/button", productName);
+        return By.xpath(xpath);
+    }
+
+    public static By cart = By.xpath("//*[@id=\"shopping_cart_container\"]/a");
+
 }
