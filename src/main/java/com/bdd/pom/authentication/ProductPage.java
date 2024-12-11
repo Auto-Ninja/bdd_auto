@@ -20,17 +20,17 @@ public class ProductPage extends PomBase {
 
     public String searchItem(String product){
         Reporter.log("Searching for a product "+product);
-        String actual = this.driver.findElement(ProductPageElements.getProductXPath(product)).getText();
+        String actual = this.driver.findElement(ProductPageElements.getProductByXPath(product)).getText();
         return actual;
     }
 
     public void addtoCart(String productName) {
         Reporter.log("Adding "+productName+" to the cart");
-        this.driver.findElement(ProductPageElements.getProductButtonXPath(productName)).click();
+        this.driver.findElement(ProductPageElements.getAddtoCartProductButtonByXPath(productName)).click();
     }
 
     public void navigatetoCart(){
         Reporter.log("Navigate to the cart details");
-        this.driver.findElement(ProductPageElements.cart).click();
+        this.driver.findElement(ProductPageElements.cartButton).click();
     }
 }
