@@ -1,21 +1,22 @@
 package com.bdd.runner;
 
-import org.testng.annotations.Test;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "classpath:features/authentication", // Path to your feature files
          glue = {"com.bdd.authentication","com.bdd.hooks"}, // Path to your step definitions
-         plugin = {"pretty",
+         plugin = {
+                 "pretty",
                  "html:target/cucumber/cucumber-reports",
                  "json:build/cucumber/cucumber-reports/cucumber.json",
                  "rerun:build/cucumber/cucumber-reports/rerun.txt",
-                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
          }, // Reports and output settings
-         monochrome = true // Cleaner console output
+         tags = ("@regression"),
+         monochrome = true,// Cleaner console output,
+         publish = true
          )
-
         public class AuthenticationRunner extends AbstractTestNGCucumberTests{
 
 

@@ -1,4 +1,4 @@
-package com.bdd.pom.authentication;
+package com.bdd.pom.authentication.pageelements;
 
 import org.openqa.selenium.By;
 

@@ -1,14 +1,11 @@
 package com.bdd.pom.authentication;
 
-import com.bdd.base.PomBase;
-import org.openqa.selenium.By;
+import com.bdd.base.PageObjectModelBase;
+import com.bdd.pom.authentication.pageelements.ProductPageElements;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.TestNG;
 import org.testng.Reporter;
 
-public class ProductPage extends PomBase {
+public class ProductPage extends PageObjectModelBase {
     public ProductPage(WebDriver webDriver){
         super(webDriver);
     }

@@ -1,3 +1,4 @@
+@regression
 Feature: Order Checkout
 
   Background: User is logged in and on the product page

@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class PomBase {
+public class PageObjectModelBase {
 
     public WebDriver driver;
-    public PomBase(WebDriver webDriver){
+    public PageObjectModelBase(WebDriver webDriver){
         this.driver = webDriver;
     }
 
@@ -30,7 +30,6 @@ public class PomBase {
     public void waitForVisibility(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TestConstants.WEB_DRIVER_WAIT));
         wait.until(ExpectedConditions.visibilityOf(element));
-        
     }
     public void clearText(By by) {
         var element = driver.findElement(by);

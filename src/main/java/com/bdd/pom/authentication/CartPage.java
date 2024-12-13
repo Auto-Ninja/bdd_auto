@@ -1,14 +1,10 @@
 package com.bdd.pom.authentication;
 
-import com.bdd.base.PomBase;
+import com.bdd.base.PageObjectModelBase;
+import com.bdd.pom.authentication.pageelements.CartpageElements;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class CartPage extends PomBase {
+public class CartPage extends PageObjectModelBase {
 
     public CartPage(WebDriver webDriver){
         super(webDriver);

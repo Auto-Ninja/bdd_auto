@@ -1,4 +1,4 @@
-@smoke
+@regression
 @Epic("EcomSite")
 @Feature("ProductManagement")
 Feature: Add/Remove Item to/from Cart
