@@ -99,8 +99,8 @@
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <parallel>classes</parallel>
-                    <threadCountClasses>3</threadCountClasses>
+<!--                    <parallel>classes</parallel>-->
+<!--                    <threadCountClasses>3</threadCountClasses>-->
                 </configuration>
             </plugin>
         </plugins>

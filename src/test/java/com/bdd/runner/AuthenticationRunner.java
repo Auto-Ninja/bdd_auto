@@ -13,7 +13,7 @@ import io.cucumber.testng.CucumberOptions;
                  "rerun:build/cucumber/cucumber-reports/rerun.txt",
                  "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
          }, // Reports and output settings
-         tags = "@smoke and @regression",
+         tags = ("@regression"),
          monochrome = true,// Cleaner console output,
          publish = true
          )
