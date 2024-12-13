@@ -1,6 +1,5 @@
 package com.bdd.runner;
 
-import org.testng.annotations.Test;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
@@ -11,12 +10,11 @@ import io.cucumber.testng.CucumberOptions;
                  "html:target/cucumber/cucumber-reports",
                  "json:build/cucumber/cucumber-reports/cucumber.json",
                  "rerun:build/cucumber/cucumber-reports/rerun.txt",
-                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
          }, // Reports and output settings
+         tags = "@regression",
          monochrome = true // Cleaner console output
          )
-
-        public class AuthenticationRunner extends AbstractTestNGCucumberTests{
+        public class AuthenticationRegressionRunner extends AbstractTestNGCucumberTests{
 
 
 

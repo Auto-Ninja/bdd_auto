@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="D:/LatestProjects/UI_BDD_Auto">
+    <test verbose="2" preserve-order="true" name="BDD_Auto">
         <classes>
-            <class name="com.bdd.runner.AuthenticationRunner"></class>
+            <class name="com.bdd.runner.AuthenticationSmokeRunner"></class>
         </classes>
     </test>
 </suite>
