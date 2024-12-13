@@ -44,13 +44,6 @@ pipeline{
                 }
     }
     post {
-                    always {
-                        allure includeProperties:
-                         false,
-                         jdk: '',
-                         results: [[path: 'target/allure-results']]
-                    }
-                }post {
 
                                  // If Maven was able to run the tests, even if some of the test
                                  // failed, record the test results and archive the jar file.
@@ -66,5 +59,3 @@ pipeline{
                                                useWrapperFileDirectly: true])
                                  }
                              }
-
-}
