@@ -2,6 +2,7 @@ package com.bdd.pom.authentication;
 
 import com.bdd.base.PomBase;
 import com.bdd.constants.TestConstants;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,6 +20,7 @@ public class LoginPage extends PomBase {
     public void SetUsername(String username){
         clearText(LoginPageElements.usernameTextBox);
         setText(LoginPageElements.usernameTextBox, username);
+
     }
 
     public void SetPassword(String password){
