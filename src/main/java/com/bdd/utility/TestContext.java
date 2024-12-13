@@ -1,5 +1,6 @@
 package com.bdd.utility;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.Dimension;
@@ -14,8 +15,7 @@ public class TestContext {
     {
         return webDriver;
     }
-    public static void TearUp()
-    {
+    public static void TearUp() throws IOException {
         OpenBrowser();
         MaximizeWindow();
         SetTimeOuts(TestConstants.IMPLICIT_WAIT);
@@ -46,7 +46,7 @@ public class TestContext {
     static void DeleteAllCookies() {
         webDriver.manage().deleteAllCookies();
     }
-    static void SetEnvironment(){
-        webDriver.get(TestConstants.LOGIN_URL);
+    static void SetEnvironment() throws IOException {
+        webDriver.get(TestConstants.getValueFromProperties("Browser_URL"));
     }
 }
