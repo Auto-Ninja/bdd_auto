@@ -1,6 +1,7 @@
 package com.bdd.authentication;
 
 import com.bdd.base.BaseStepDefs;
+import com.bdd.constants.TestConstants;
 import com.bdd.enums.ApplicationBrowser;
 import com.bdd.pom.authentication.LoginPage;
 import com.bdd.pom.authentication.ProductPage;
@@ -24,7 +25,7 @@ public class LogInStepdefs extends BaseStepDefs {
 
     @And("I enter {string} in the Password text box")
     public void EnterPassword(String password) {
-        loginPage.SetPassword(password);
+        loginPage.SetPassword(TestConstants.getDefaultPassword());
     }
 
     @Given("The application has been launched")

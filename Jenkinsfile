@@ -2,7 +2,6 @@ pipeline{
     agent any
     tools{
         maven 'M2'
-        allure 'Allure226'
     }
     environment
     {
@@ -29,7 +28,6 @@ pipeline{
                 }
                 steps{
                     echo 'I am testing my code'
-                    //sh 'mvn test -Dtest=orders.OrderTest'
                     bat 'mvn clean test'
                     }
         }
@@ -42,8 +40,7 @@ pipeline{
                         }
                         steps{
                             echo 'I am testing my code'
-                            bat 'mvn allure:report'
-                            }
+                             }
                 }
     }
     post {
@@ -53,6 +50,21 @@ pipeline{
                          jdk: '',
                          results: [[path: 'target/allure-results']]
                     }
-                }
+                }post {
+
+                                 // If Maven was able to run the tests, even if some of the test
+                                 // failed, record the test results and archive the jar file.
+                                 success {
+                                   publishHTML([
+                                               allowMissing: false,
+                                               alwaysLinkToLastBuild: false,
+                                               keepAll: false,
+                                               reportDir: 'Reports',
+                                               reportFiles: 'Spark.html',
+                                               reportName: 'ExtentReport',
+                                               reportTitles: '',
+                                               useWrapperFileDirectly: true])
+                                 }
+                             }
 
 }

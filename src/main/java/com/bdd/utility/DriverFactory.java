@@ -17,17 +17,17 @@ import static com.bdd.enums.ApplicationBrowser.CHROME;
 
 public class DriverFactory {
     static WebDriver webDriver;
-    public static WebDriver GetBrowser(ApplicationBrowser applicationBrowser){
+    public static WebDriver GetBrowser(ApplicationBrowser applicationBrowser,Boolean headLessMode){
         switch (applicationBrowser.name().toUpperCase())
         {
             case "CHROME":
-                webDriver = GetChromeDriver();
+                webDriver = GetChromeDriver(headLessMode);
                 break;
         }
         return webDriver;
     }
 
-    private static ChromeDriver GetChromeDriver(){
+    private static ChromeDriver GetChromeDriver(Boolean isHeadLess){
         //--headless: Runs Chrome in headless mode.
         //--disable-extensions: Disables all installed extensions.
         //window-size=1200,800: Sets the browser window size to 1200x800 pixels.
@@ -44,7 +44,8 @@ public class DriverFactory {
         //options.addArguments("headless=true");
         options.addArguments("window-size=1200,800");
         options.addArguments("disable-infobars");
-
+        if(isHeadLess)
+            options.addArguments("--headless=chrome");
         LoggingPreferences loggingPreferences = new LoggingPreferences();
         loggingPreferences.enable(LogType.BROWSER, Level.ALL);
 

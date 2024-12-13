@@ -1,9 +1,10 @@
 package com.bdd.pom.authentication;
 
-import com.bdd.base.PomBase;
+import com.bdd.base.PageObjectModelBase;
+import com.bdd.pom.authentication.pageelements.CheckOutPageElements;
 import org.openqa.selenium.WebDriver;
 
-public class CheckOutPage extends PomBase {
+public class CheckOutPage extends PageObjectModelBase {
 
     public CheckOutPage (WebDriver webDriver){
         super(webDriver);

@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class PomBase {
+public class PageObjectModelBase {
 
     public WebDriver driver;
-    public PomBase(WebDriver webDriver){
+    public PageObjectModelBase(WebDriver webDriver){
         this.driver = webDriver;
     }
 

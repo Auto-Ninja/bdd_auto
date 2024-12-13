@@ -15,7 +15,7 @@ public class TestContext {
     {
         return webDriver;
     }
-    public static void TearUp() throws IOException {
+    public static void TearUp()  {
         OpenBrowser();
         MaximizeWindow();
         SetTimeOuts(TestConstants.IMPLICIT_WAIT);
@@ -27,9 +27,15 @@ public class TestContext {
         if(webDriver!=null)
             webDriver.close();
     }
-    static void OpenBrowser()
-    {
-        webDriver = DriverFactory.GetBrowser(ApplicationBrowser.CHROME);
+    static void OpenBrowser()  {
+        Boolean isHeadLess = Boolean.valueOf(TestConstants.getValueFromProperties("HeadLess"));
+        String browser =TestConstants.getValueFromProperties("Browser").toUpperCase();
+        if(browser.equals("CHROME")) {
+            webDriver = DriverFactory.GetBrowser(ApplicationBrowser.CHROME, isHeadLess);
+        }
+        if(browser.equals("FIREFOX")) {
+                webDriver = DriverFactory.GetBrowser(ApplicationBrowser.FIREFOX, isHeadLess);
+        }
     }
     static void MaximizeWindow() {
         webDriver.manage().window().setSize(new Dimension(1440, 900));
@@ -46,7 +52,7 @@ public class TestContext {
     static void DeleteAllCookies() {
         webDriver.manage().deleteAllCookies();
     }
-    static void SetEnvironment() throws IOException {
+    static void SetEnvironment()  {
         webDriver.get(TestConstants.getValueFromProperties("Browser_URL"));
     }
 }
