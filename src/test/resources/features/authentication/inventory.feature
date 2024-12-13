@@ -1,4 +1,4 @@
-@regression
+@smoke
 @Epic("EcomSite")
 @Feature("UserManagement")
 Feature: Product Search
