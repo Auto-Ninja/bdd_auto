@@ -92,12 +92,16 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire.version}</version>
                 <configuration>
+                     <forkCount>2</forkCount>
+                            <reuseForks>false</reuseForks>
+                            <reportsDirectory>target/surefire-reports-${surefire.forkNumber}</reportsDirectory>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
+                    <parallel>classes</parallel>
+                    <threadCountClasses>3</threadCountClasses>
                 </configuration>
-
             </plugin>
         </plugins>
     </build>

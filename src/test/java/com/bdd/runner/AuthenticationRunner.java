@@ -6,15 +6,18 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = "classpath:features/authentication", // Path to your feature files
          glue = {"com.bdd.authentication","com.bdd.hooks"}, // Path to your step definitions
-         plugin = {"pretty",
+         plugin = {
+                 "pretty",
                  "html:target/cucumber/cucumber-reports",
                  "json:build/cucumber/cucumber-reports/cucumber.json",
                  "rerun:build/cucumber/cucumber-reports/rerun.txt",
+                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
          }, // Reports and output settings
-         tags = "@regression",
-         monochrome = true // Cleaner console output
+         tags = "@smoke and @regression",
+         monochrome = true,// Cleaner console output,
+         publish = true
          )
-        public class AuthenticationRegressionRunner extends AbstractTestNGCucumberTests{
+        public class AuthenticationRunner extends AbstractTestNGCucumberTests{
 
 
 
