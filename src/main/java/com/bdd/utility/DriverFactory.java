@@ -3,6 +3,7 @@ package com.bdd.utility;
 import com.bdd.enums.ApplicationBrowser;
 //import io.github.bonigarcia.wdm.WebDriverManager;
 //import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -34,7 +35,7 @@ public class DriverFactory {
         //user-data-dir: Specifies the directory for the custom user profile.
         //disable-infobars: Disables the info bar that appears at the top of the browser.
 
-        //WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         //https://googlechromelabs.github.io/chrome-for-testing/
         //https://chromedriver.storage.googleapis.com/

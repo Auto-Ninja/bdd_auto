@@ -13,26 +13,29 @@ pipeline{
             booleanParam(name: 'executeTests',defaultValue:true,description:'Decide to execute test in the build')
             choice(name: 'PLATFORM_FILTER', choices: ['all', 'linux', 'windows', 'mac'], description: 'Run on specific platform')
         }
-    stages{
-        stage("build my code"){
-            steps{
+    stages
+    {
+        stage("build my code")
+        {
+            steps
+            {
             echo "I am building my code from ${BRANCH_NAME} & ${MY_VERSION} -- ${params.VERSION}"
             }
         }
         stage("test my code")
         {
-            when{
-                    expression{
+            when{  expression{
                         params.executeTests
                     }
                 }
-                steps{
+                steps
+                {
                     echo 'I am testing my code'
                     bat 'mvn clean test'
-                    }
+                }
         }
         stage("publish my test results")
-                {
+        {
                     when{
                             expression{
                                 params.executeTests
@@ -41,11 +44,11 @@ pipeline{
                         steps{
                             echo 'I am testing my code'
                              }
-                }
+        }
     }
-    post {
+    post
+    {
 
-                                 
                                  always {
                                    publishHTML([
                                                allowMissing: false,
@@ -57,5 +60,5 @@ pipeline{
                                                reportTitles: '',
                                                useWrapperFileDirectly: true])
                                  }
-                             }
+    }
 }

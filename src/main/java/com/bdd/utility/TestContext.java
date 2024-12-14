@@ -25,7 +25,7 @@ public class TestContext {
     public static void TearDown()
     {
         if(webDriver!=null)
-            webDriver.close();
+            webDriver.quit();
     }
     static void OpenBrowser()  {
         Boolean isHeadLess = Boolean.valueOf(TestConstants.getValueFromProperties("HeadLess"));
