@@ -34,8 +34,13 @@ public class DriverFactory {
         //window-size=1200,800: Sets the browser window size to 1200x800 pixels.
         //user-data-dir: Specifies the directory for the custom user profile.
         //disable-infobars: Disables the info bar that appears at the top of the browser.
-
+        WebDriverManager.chromedriver().clearDriverCache().setup();
+        WebDriverManager.chromedriver().clearResolutionCache().setup();
         WebDriverManager.chromedriver().setup();
+//        WebDriverManager.chromedriver().browserVersion("114.0.5735.90");
+//        WebDriverManager.chromedriver().avoidFallback();
+//        WebDriverManager.chromedriver().arch32();
+//        WebDriverManager.chromedriver().win();
         ChromeOptions options = new ChromeOptions();
         //https://googlechromelabs.github.io/chrome-for-testing/
         //https://chromedriver.storage.googleapis.com/

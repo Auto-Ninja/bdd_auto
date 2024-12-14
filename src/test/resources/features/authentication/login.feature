@@ -5,7 +5,7 @@ Feature: Login Test
 
   Background: User navigates to Application URL
     Given The application has been launched
-
+  @smoke
   @Jira("S-456") # Link to Jira user story
   Scenario: User should be able to login with valid credentials
     When I enter "standard_user" in the Username text box

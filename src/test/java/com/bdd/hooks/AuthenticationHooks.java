@@ -2,6 +2,7 @@ package com.bdd.hooks;
 
 import java.io.IOException;
 
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import io.cucumber.java.AfterStep;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -20,8 +21,12 @@ public class AuthenticationHooks {
     }
     @After
     public void afterScenario(Scenario scenario) {
-        final byte[] screenshot = ((TakesScreenshot) TestContext.getWebDriver()).getScreenshotAs(OutputType.BYTES);
-        scenario.attach(screenshot, "image/png", scenario.getName());
+        System.out.println(String.format("------- [Tag = %s] -- [%s]------ ",scenario.getSourceTagNames(),scenario.getName()));
+        if(scenario.isFailed()) {
+            final byte[] screenshot = ((TakesScreenshot) TestContext.getWebDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
+        }
+        System.out.println(String.format("------- %s ------ ",scenario.getStatus()));
         TestContext.TearDown();
     }
     @AfterStep

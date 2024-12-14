@@ -17,8 +17,9 @@ import io.cucumber.testng.CucumberOptions;
          monochrome = true,// Cleaner console output,
          publish = true
          )
-        public class AuthenticationRunner extends AbstractTestNGCucumberTests{
+        public class AuthenticationRegressionRunner extends AbstractTestNGCucumberTests{
 
 
 
 }
+

@@ -2,6 +2,7 @@ package com.bdd.pom.authentication;
 
 import com.bdd.base.PageObjectModelBase;
 import com.bdd.pom.authentication.pageelements.CartpageElements;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 
 public class CartPage extends PageObjectModelBase {
@@ -21,6 +22,16 @@ public class CartPage extends PageObjectModelBase {
 
     public String isCartEmpty(){
        //return this.driver.findElement(CartpageElements.noIteminCart).getText();
+
+        boolean isVisbible = this.isDisplayed(CartpageElements.noIteminCart);
+        if(!isVisbible)
+        {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
         return this.getText(CartpageElements.noIteminCart);
     }
 
